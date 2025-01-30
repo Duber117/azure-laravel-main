@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('auth/microsoft/callback', [AuthenticatedSessionController::class, 'callback'])
+    ->middleware('guest')
+    ->name('microsoft.callback');
+
+
+require __DIR__ . '/auth.php';
