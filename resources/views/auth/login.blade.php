@@ -44,16 +44,13 @@
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
-            <x-secondary-button class="ms-3">
-                <a href="{{ route('connect') }}" class="flex items-center">
-                    <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-                    </svg>
-                    {{ __('Login with your Microsoft Account') }}
-                </a>
-            </x-secondary-button>
         </div>
     </form>
+    <div class="mt-4 flex items-center justify-end">
+        <x-primary-button class="ms-3">
+            <a href="{{ route('connect') }}" class="flex items-center">
+                {{ __('Login with your Microsoft Account') }}
+            </a>
+        </x-primary-button>
+    </div>
 </x-guest-layout>
